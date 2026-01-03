@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        body {
+    background-color: #fff0f3; /* ປ່ຽນເປັນສີບົວອ່ອນໆ */
+    font-family: 'Phetsarath OT';
+
+}
+
+.sorry-card {
+    max-width: 600px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.heading h4 {
+    color: #ff4d6d; /* ສີແດງບົວ */
+    font-size: 24px;
+}
+
+.heading .line::after {
+    background-color: #ff4d6d;
+    width: 20%; /* ໃຫ້ເສັ້ນຍາວຂຶ້ນໜ້ອຍໜຶ່ງ */
+    left: 40%; /* ຈັດໃຫ້ຢູ່ກາງ */
+}
+
+/* ຕົກແຕ່ງປຸ່ມໃຫ້ເບິ່ງມົນ ແລະ ໜ້າຮັກ */
+.input-button input {
+    border-radius: 50px;
+    padding: 10px 30px;
+    transition: 0.3s;
+}
+    </style>
+    <div class="wrapper">
+    <div class="sorry-card">
+        <div class="heading">
+            <h4>ຂ້ອຍຂໍໂທດເດີ້... 🥺</h4>
+            <div class="line"></div>
+        </div>
+
+        <div class="grid-10-img" style="height: 300px; border-radius: 15px; margin-bottom: 20px;">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJueW9ueXNueXNueXNueXNueXNueXNueXNueXNueXNueXNueCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/c76IJLufpNUMvULn59/giphy.gif" alt="Sorry Bear">
+        </div>
+
+        <div class="grid-color" style="text-align: center; border-radius: 15px;">
+            <p style="font-size: 18px; line-height: 1.6;">
+                "ຂ້ອຍຮູ້ວ່າຂ້ອຍເຮັດຜິດໄປ ແລະ ເຮັດໃຫ້ເຈົ້າເສຍໃຈ. <br>
+                ຂ້ອຍບໍ່ໄດ້ຕັ້ງໃຈຈະເຮັດໃຫ້ມັນເປັນແບບນີ້ເລີຍ. <br>
+                ຍົກໂທດໃຫ້ຂ້ອຍໄດ້ບໍ່? ຂ້ອຍສັນຍາວ່າຈະປັບປຸງໂຕໃຫ້ດີຂຶ້ນ."
+            </p>
+            
+            <div class="input-button" style="margin-top: 30px; display: flex; justify-content: center; gap: 20px;">
+                <input type="button" value="ຍົກໂທດໃຫ້ແລ້ວ 😊" onclick="forgiveMe()" style="background-color: #4CAF50; border-color: #4CAF50;">
+                <input type="button" value="ບໍ່ຍົກໂທດ! 😤" id="noBtn" onmouseover="moveButton()" style="background-color: #f44336; border-color: #f44336;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function forgiveMe() {
+        alert("ຂອບໃຈເດີ້ທີ່ຍົກໂທດໃຫ້! ຂ້ອຍຮັກເຈົ້າຫຼາຍໆ ❤️");
+        window.location.href = "/mydey/index.html"; // ຫຼື ປ່ຽນໄປໜ້າອື່ນທີ່ເຈົ້າຕ້ອງການ
+    }
+
+    function moveButton() {
+        const btn = document.getElementById('noBtn');
+        const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+        const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+        
+        btn.style.position = 'absolute';
+        btn.style.left = x + 'px';
+        btn.style.top = y + 'px';
+    }
+</script>
+</body>
+</html>
